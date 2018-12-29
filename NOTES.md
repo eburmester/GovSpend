@@ -34,35 +34,26 @@ Quit - will exit this program.
 
 *Agency List* 
 pulls list of Agency names 
-/api/v2/bulk_download/list_agencies/
+/api/v2/references/toptier_agencies/
+results i want to show: 
+	'agency_name'
 (maybe) then prompts user to input the name of an Agency they would like to see spending details for (Agency Search)
 
 *Fiscal Year Search*
-/api/v2/spending/
-request: 
-{
-    "type": "agency",
-    "filters": {
-        "fy": "2017"
-    }
-}
-default "type" --> "agency"
-default "filters" --> "fy"
-(optional filter) "quarter"
+/api/v2/references/toptier_agencies/
+results i want to show: 
+	'agency_name'
+	'active_fq'
 fy must be four digit year format: YYYY
 prompts user for a Fiscal Year to pull all Agencies active during that year
 (maybe) then prompts user to input the name of an Agency they would like to see spending details for (y/n optional)
 
 *Agency Search*
-/api/v2/spending/
-request: 
-{
-    "type": "agency",
-    "filters": {
-        "fy": "2017"
-    }
-}
-default "type" --> "agency"
-"name" = name of agency - string in sentence case
+/api/v2/references/toptier_agencies/
+results i want to show: 
+	'agency_name'
+	'active_fy'
+	'active_fq'
+	'obligated_amount'
 prompts user for Agency name they would like to see spending details for
-(maybe) then prompts user to narrow search by Fiscal Year (y/n optional)
+
