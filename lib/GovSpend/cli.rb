@@ -10,11 +10,11 @@ class GovSpend::CLI
 	def options
 		puts "What would you like to do?"
 		puts "I accept: 
-			"1" - Menu 
-			"2" - Agency List 
-			"3" - Fiscal Year Search 
-			"4" - Agency Search
-			"5" - Quit"
+			1 - Menu 
+			2 - Agency List 
+			3 - Fiscal Year Search 
+			4 - Agency Search
+			5 - Quit"
 	end
 
 	def menu
