@@ -12,4 +12,4 @@ require "GovSpend"
 # Pry.start
 
 require "irb"
-IRB.start
+IRB.start(__FILE__)
