@@ -4,8 +4,6 @@ require "bundler/setup"
 require "GovSpend"
 require ".lib/govspend"
 
-GovSpend::CLI.new.call
-
 # You can add fixtures and/or initialization code here to make experimenting
 # with your gem easier. You can also use a different console, if you like.
 

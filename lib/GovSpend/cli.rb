@@ -1,5 +1,10 @@
-cli.rb
+#!/usr/bin/env ruby
+#CLI Controller
 
-class CLIcommand
+class GovSpend::CLI
+
+	def call
+		puts "Hi! Welcome to GovSpend."
+	end
 
 end
