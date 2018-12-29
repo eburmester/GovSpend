@@ -16,13 +16,18 @@ class GovSpend::CLI
 		4 - Agency Search
 		5 - Quit"
 		
-		input = gets.strip
+		while input != '5'
+			case input 
+				input = gets.strip
+			when '1'
+				menu
+			when '2'
+				puts "heres a list of agencies"
+			when '3'
+				puts "blah"
+			when '4'
+				puts "whatever"
 
-		if input == '1'
-			menu
-		else 
-			options unless input == '5'
-		end
 	end
 
 	def menu
