@@ -1,4 +1,3 @@
-#!/usr/bin/env ruby
 #CLI Controller
 
 class GovSpend::CLI
