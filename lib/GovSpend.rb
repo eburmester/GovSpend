@@ -1,5 +1,5 @@
-require_relative "GovSpend/version"
-require_relative "./govspend/cli"
+require_relative "./GovSpend/version"
+require_relative "./GovSpend/cli"
 
 module GovSpend
   class Error < StandardError; end
