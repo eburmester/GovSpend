@@ -15,10 +15,8 @@ class GovSpend::CLI
 		3 - Fiscal Year Search 
 		4 - Agency Search
 		5 - Quit"
-		
-		input = nil
-		while input != "5"
-			input = gets.strip
+		input = gets.strip
+			
 			case input 
 			when "1"
 				menu
@@ -28,8 +26,9 @@ class GovSpend::CLI
 				puts "blah"
 			when "4"
 				puts "whatever"
+			when "5"
+				goodbye
 			end
-		end
 	end
 
 	def menu
@@ -55,5 +54,10 @@ class GovSpend::CLI
 	def agency_search
 
 	end
+
+	def goodbye
+		puts "Have a nice day!"
+	end
+
 
 end
