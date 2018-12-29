@@ -26,13 +26,15 @@ class GovSpend::CLI
 	end
 
 	def menu
-		puts "Here's a detailed list of your options:"
-		puts "Menu - brings up this dialogue.
-Agency List - brings up the list of available Agencies
-Fiscal Year Search - will prompt for a Fiscal Year to search for the available Agencies active in that year
+		puts "Here's a detailed list of your options:
+		"
+		puts "(1) Menu - brings up this dialogue.
+(2) Agency List - brings up the list of available Agencies
+(3) Fiscal Year Search - will prompt for a Fiscal Year to search for the available Agencies active in that year
 	(Optional) prompt to offer a quarterly search to narrow down options
-Agency Search - will prompt for an Agency name to find and provide details for.
-Quit - will exit this program."
+(4) Agency Search - will prompt for an Agency name to find and provide details for.
+(5) Quit - will exit this program."
+	options
 	end
 
 	def agency_list
