@@ -1,4 +1,4 @@
 #!/usr/bin/env ruby
-require './lib/GovSpend'
+require_relative './lib/GovSpend'
 
 GovSpend::CLI.new.call 
