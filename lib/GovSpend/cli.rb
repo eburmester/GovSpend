@@ -35,12 +35,11 @@ class GovSpend::CLI
 	def menu
 		puts "Here's a detailed list of your options:
 		"
-		puts "(1) Menu - brings up this dialogue.
+		puts "(1) Menu - brings up this dialogue
 (2) Agency List - brings up the list of available Agencies
 (3) Fiscal Year Search - will prompt for a Fiscal Year to search for the available Agencies active in that year
-	(Optional) prompt to offer a quarterly search to narrow down options
-(4) Agency Search - will prompt for an Agency name to find and provide details for.
-(5) Quit - will exit this program."
+(4) Agency Search - will prompt for an Agency name to find and provide details for
+(5) Quit - will exit this program"
 	options
 	end
 
@@ -53,18 +52,12 @@ class GovSpend::CLI
 	end
 
 	def fiscal_year_search
-    puts "Please enter a year in the formal YYYY."
-    active_fy = GovSpend::FiscalYearSearch.fiscal_year_search
+	  puts "Please enter a year in the format YYYY."
     input = gets.strip
     
-    puts "Here are a list of Agencies active in that Fiscal Year:"
-    #binding.pry
-    active_fy.each do |array|
-      array.select do |k, v|
-        k == "active_fy" && v == input
-      end
-    end
-	end
+    #active_fy = GovSpend::FiscalYearSearch.fiscal_year_search
+    GovSpend::FiscalYearSearch.fiscal_year_search.map {|array| array.select {|k, v| v == "2017"}}
+  end
 
 	def agency_search
 

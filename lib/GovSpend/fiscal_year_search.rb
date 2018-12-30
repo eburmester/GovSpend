@@ -24,7 +24,18 @@ class GovSpend::FiscalYearSearch
          end
       end
     end
-  end
+    
+  #   list3 = list2.each do |array|
+  #   array.select do |k, v| 
+  #     k == "active_fy" || v == "#{year}"
+  #     end 
+  #   end
+  #   binding.pry
+  
+  
+   end
 
+
+  
   
 end
