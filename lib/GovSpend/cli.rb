@@ -48,6 +48,7 @@ class GovSpend::CLI
     puts "Agency List:"
     agency_list = GovSpend::AgencyList.all_agencies
     
+    
 	end
 
 	def fiscal_year_search
