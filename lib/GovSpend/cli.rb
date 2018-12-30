@@ -1,4 +1,5 @@
 #CLI Controller
+require 'pry'
 
 class GovSpend::CLI
 
@@ -21,7 +22,7 @@ class GovSpend::CLI
 			when "1"
 				menu
 			when "2"
-				puts "heres a list of agencies"
+				agency_list
 			when "3"
 				puts "blah"
 			when "4"
@@ -44,7 +45,9 @@ class GovSpend::CLI
 	end
 
 	def agency_list
-
+    puts "Agency List:"
+    agency_list = GovSpend::AgencyList.all_agencies
+    
 	end
 
 	def fiscal_year_search

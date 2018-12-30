@@ -1,4 +1,6 @@
+require 'rubygems'
 require 'httparty'
+require 'pry'
 
 class GovSpend::AgencyList
 	include HTTParty
@@ -7,8 +9,8 @@ class GovSpend::AgencyList
 	def self.all_agencies
 		#should return a list of all active agencies
 		
-		agency_list = self.class.get('/api/v2/references/toptier_agencies/')
-		agency_list
+		list = HTTParty.get('https://api.usaspending.gov/api/v2/references/toptier_agencies/')
+    list
 	end
 
 end
