@@ -1,5 +1,5 @@
 #CLI Controller
-require 'pry'
+#require 'pry'
 
 class GovSpend::CLI
 
@@ -45,7 +45,7 @@ class GovSpend::CLI
 
 	def agency_list
     puts "Agency List:"
-    agency_list = GovSpend::AgencyList.all_agencies
+    GovSpend::API.list_all 
     
     puts "\nWhich agency would you like details on?"
     #agency_search
