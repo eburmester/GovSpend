@@ -87,7 +87,7 @@ class GovSpend::CLI
 	end
 
 	def goodbye
-		puts "OK, have a nice day!"
+		puts "\nOK, have a nice day!"
 	end
 
 
