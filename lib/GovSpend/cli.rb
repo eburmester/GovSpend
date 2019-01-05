@@ -54,12 +54,14 @@ class GovSpend::CLI
 	end
 
 	def agency_search
-    puts "\nEnter the Agency's name you would like more details on:"
+    puts "\nEnter the Agency name you would like more details on or '1' to return to the Menu."
     input = gets.strip.split.map(&:capitalize).join(' ')
-    if agency = GovSpend::AgencyList.search(input)
+    if input == '1'
+        menu
+    elsif agency = GovSpend::AgencyList.search(input)
       details(agency)
     else 
-      puts "Please enter a valid agency name or enter '2' to see the list of active Agencies."
+      puts "Please enter a valid agency name or '2' to see the list of active Agencies."
       input = gets.strip.downcase
       if input == '2'
         agency_list
