@@ -35,7 +35,7 @@ class GovSpend::CLI
 		"
 		puts "(1) Menu - brings up this dialogue
 (2) Agency List - brings up the list of available Agencies
-(3) Agency Search - will prompt for an Agency name to find and provide details for
+(3) Agency Search - will list details associated with the Agency provided
 (4) Quit - will exit this program"
 	options
 	end
@@ -50,14 +50,33 @@ class GovSpend::CLI
     GovSpend::AgencyList.all_agencies.each do |hash|
       puts "#{hash.agency_name}"
     end
-    puts "\nWhich agency would you like details on?"
-    #agency_search
+    agency_search
 	end
 
 	def agency_search
-    puts "\nPlease enter the Agency's name you would like more details on:"
-    input = gets.strip.capitalize
-    if input == 
+    puts "\nEnter the Agency's name you would like more details on:"
+    input = gets.strip.split.map(&:capitalize).join(' ')
+    if agency = GovSpend::AgencyList.search(input)
+      details(agency)
+    else 
+      puts "Please enter a valid agency name or enter '2' to see the list of active Agencies."
+	end
+	
+	def details(agency)
+	  puts "Agency Name: #{agency.agency_name}"
+	  puts "Agency ID: #{agency.agency_id}"
+	  puts "Active Fiscal Year: #{agency.active_fy}"
+	  puts "Obligated Amount: #{agency.obligated_amount}"
+	  puts "Percentage of Total Budget Authority: #{agency.percentage_of_total_budget_authority}"
+	  
+	  puts "\nWould you like to search for another Agency? ('yes' or 'no')"
+	  input = gets.strip.downcase
+	  if input == 'yes'
+	    agency_search
+	  elsif input == 'no'
+	    goodbye
+	  else 
+	end
 	end
 
 	def goodbye

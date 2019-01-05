@@ -20,6 +20,10 @@ class GovSpend::AgencyList
       self.new(agency_hash)
     end
   end
+  
+  def search(name)
+    self.all_agencies.find {|agency| agency.agency_name == name}
+  end
 	
 	def self.all_agencies
 		@@all
