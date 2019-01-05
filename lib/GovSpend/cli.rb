@@ -45,7 +45,7 @@ class GovSpend::CLI
 
 	def agency_list
     puts "Agency List:"
-    GovSpend::API.list_all 
+    list = GovSpend::API.api_call
     
     puts "\nWhich agency would you like details on?"
     #agency_search
