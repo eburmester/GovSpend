@@ -10,7 +10,7 @@ class GovSpend::CLI
 	end
 
 	def options
-		puts "What would you like to do?"
+		puts "\nWhat would you like to do?"
 		puts "I accept: 
 		1 - Menu 
 		2 - Agency List 
@@ -24,14 +24,14 @@ class GovSpend::CLI
 			when "2"
 				agency_list
 			when "3"
-				#agency_search
+				agency_search
 			when "4"
 				goodbye
 			end
 	end
 
 	def menu
-		puts "Here's a detailed list of your options:
+		puts "\nHere's a detailed list of your options:
 		"
 		puts "(1) Menu - brings up this dialogue
 (2) Agency List - brings up the list of available Agencies
@@ -60,10 +60,17 @@ class GovSpend::CLI
       details(agency)
     else 
       puts "Please enter a valid agency name or enter '2' to see the list of active Agencies."
+      input = gets.strip.downcase
+      if input == '2'
+        agency_list
+      else 
+        agency_search
+      end
+    end
 	end
 	
 	def details(agency)
-	  puts "Agency Name: #{agency.agency_name}"
+	  puts "\nAgency Name: #{agency.agency_name}"
 	  puts "Agency ID: #{agency.agency_id}"
 	  puts "Active Fiscal Year: #{agency.active_fy}"
 	  puts "Obligated Amount: #{agency.obligated_amount}"
@@ -80,7 +87,7 @@ class GovSpend::CLI
 	end
 
 	def goodbye
-		puts "Have a nice day!"
+		puts "OK, have a nice day!"
 	end
 
 

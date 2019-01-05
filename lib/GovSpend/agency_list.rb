@@ -21,8 +21,8 @@ class GovSpend::AgencyList
     end
   end
   
-  def search(name)
-    self.all_agencies.find {|agency| agency.agency_name == name}
+  def self.search(name)
+    GovSpend::AgencyList.all_agencies.find {|agency| agency.agency_name == name}
   end
 	
 	def self.all_agencies
