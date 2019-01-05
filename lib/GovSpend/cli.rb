@@ -5,6 +5,7 @@ class GovSpend::CLI
 
 	def call
 		puts "Hi! Welcome to GovSpend."
+		make_list
 		options
 	end
 
@@ -13,9 +14,8 @@ class GovSpend::CLI
 		puts "I accept: 
 		1 - Menu 
 		2 - Agency List 
-		3 - Fiscal Year Search 
-		4 - Agency Search
-		5 - Quit"
+		3 - Agency Search
+		4 - Quit"
 		input = gets.strip
 			
 			case input 
@@ -24,10 +24,8 @@ class GovSpend::CLI
 			when "2"
 				agency_list
 			when "3"
-				fiscal_year_search
+				#agency_search
 			when "4"
-				puts "whatever"
-			when "5"
 				goodbye
 			end
 	end
@@ -37,30 +35,29 @@ class GovSpend::CLI
 		"
 		puts "(1) Menu - brings up this dialogue
 (2) Agency List - brings up the list of available Agencies
-(3) Fiscal Year Search - will prompt for a Fiscal Year to search for the available Agencies active in that year
-(4) Agency Search - will prompt for an Agency name to find and provide details for
-(5) Quit - will exit this program"
+(3) Agency Search - will prompt for an Agency name to find and provide details for
+(4) Quit - will exit this program"
 	options
 	end
+	
+	def make_list
+	  agency_array = GovSpend::API.list_all
+    GovSpend::AgencyList.create_from_collection(agency_array)
+  end
 
 	def agency_list
-    puts "Agency List:"
-    list = GovSpend::API.api_call
-    
+    puts "\nAgency List:"
+    GovSpend::AgencyList.all_agencies.each do |hash|
+      puts "#{hash.agency_name}"
+    end
     puts "\nWhich agency would you like details on?"
     #agency_search
 	end
 
-	def fiscal_year_search
-	  puts "Please enter a year in the format YYYY."
-    input = gets.strip
-    
-    #active_fy = GovSpend::FiscalYearSearch.fiscal_year_search
-    GovSpend::FiscalYearSearch.fiscal_year_search.map {|array| array.select {|k, v| v == "2017"}}
-  end
-
 	def agency_search
-
+    puts "\nPlease enter the Agency's name you would like more details on:"
+    input = gets.strip.capitalize
+    if input == 
 	end
 
 	def goodbye

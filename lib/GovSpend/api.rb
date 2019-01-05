@@ -13,6 +13,7 @@ class GovSpend::API
   end 
   
   def self.list_all
+    self.api_call
     @@list 
   end
   
