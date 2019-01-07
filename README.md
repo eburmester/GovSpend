@@ -1,5 +1,3 @@
-Hello!
-
 # GovSpend
 
 This Ruby Gem provides a CLI to view award/spending details for US federal contracts as per the USA Spending website.
