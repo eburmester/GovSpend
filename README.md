@@ -6,18 +6,6 @@ This Ruby Gem provides a CLI to view award/spending details for US federal contr
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'GovSpend'
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
     $ gem install GovSpend
 
 ## Usage
