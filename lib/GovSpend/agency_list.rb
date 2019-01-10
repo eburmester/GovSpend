@@ -1,6 +1,6 @@
 require 'rubygems'
 require 'httparty'
-require 'pry'
+
 
 class GovSpend::AgencyList
 	include HTTParty
