@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 
 #require 'bundler/setup'
-require './lib/GovSpend'
+#require './lib/GovSpend'
+require 'GovSpend'
 
 GovSpend::CLI.new.call 
