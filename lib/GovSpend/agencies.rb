@@ -2,7 +2,7 @@ require 'rubygems'
 require 'httparty'
 
 
-class GovSpend::AgencyList
+class GovSpend::Agencies
 	include HTTParty
 	base_uri "api.usaspending.gov"
 	
